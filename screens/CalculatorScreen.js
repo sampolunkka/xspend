@@ -2,7 +2,7 @@
 
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { CalcButton, CalcDisplay } from "../components";
+import { BackspaceButton, CalcButton, CalcDisplay } from "../components";
 
 require("./../lib/swisscalc.lib.format.js");
 require("./../lib/swisscalc.lib.operator.js");
@@ -17,7 +17,7 @@ export default class CalculatorScreen extends React.Component {
     super(props);
 
     this.state = {
-      display: "0",
+      display: "",
     };
 
     //Init calculator
@@ -28,6 +28,15 @@ export default class CalculatorScreen extends React.Component {
   //takes in digit from buttono
   onDigitPress = (digit) => {
     this.calc.addDigit(digit);
+    this.updateDisplayState();
+  };
+
+  onBackspacePress = () => {
+    this.calc.backspace();
+    this.updateDisplayState();
+  };
+
+  updateDisplayState = () => {
     this.setState({ display: this.calc.getMainDisplay() });
   };
 
@@ -36,6 +45,13 @@ export default class CalculatorScreen extends React.Component {
       <View style={styles.container}>
         <View style={styles.displayContainer}>
           <CalcDisplay display={this.state.display} />
+          <BackspaceButton
+            title=" 	
+            &#9003;"
+            onPress={() => {
+              this.onBackspacePress();
+            }}
+          ></BackspaceButton>
         </View>
         <View style={styles.buttonRow}>
           <CalcButton
@@ -123,12 +139,19 @@ export default class CalculatorScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#00798C" },
+  container: {
+    flex: 1,
+    backgroundColor: "#00798C",
+    paddingBottom: "5%",
+  },
   displayContainer: {
     flex: 1,
     justifyContent: "flex-end",
-    marginBottom: "3%",
+    alignItems: "flex-end",
+    flexDirection: "row",
+    marginBottom: "5%",
     backgroundColor: "#1B9AAA",
+    paddingBottom: "5%",
   },
   buttonRow: { flexDirection: "row", justifyContent: "space-around" },
 });
