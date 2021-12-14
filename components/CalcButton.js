@@ -5,20 +5,13 @@ export default class CalcButton extends React.Component {
   static defaultProps = {
     onPress: function () {},
     title: "",
-    color: "white",
-    backgroundColor: "black",
   };
 
   render() {
     var bc = this.props.backgroundColor;
     return (
-      <TouchableOpacity
-        onPress={this.props.onPress}
-        style={[styles.container, { backgroundColor: bc }]}
-      >
-        <Text style={[styles.text, { color: this.props.color }]}>
-          {this.props.title}
-        </Text>
+      <TouchableOpacity onPress={this.props.onPress} style={styles.container}>
+        <Text style={styles.text}>{this.props.title}</Text>
       </TouchableOpacity>
     );
   }
@@ -26,11 +19,13 @@ export default class CalcButton extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    margin: 8,
     alignItems: "center",
     justifyContent: "center",
-    width: 50,
+    width: 100,
     height: 50,
-    borderRadius: 20,
+    borderRadius: 10,
+    backgroundColor: "#003D5B",
   },
-  text: { fontSize: 30, fontWeight: "bold" },
+  text: { fontSize: 30, fontWeight: "bold", color: "#E9F5DB" },
 });
