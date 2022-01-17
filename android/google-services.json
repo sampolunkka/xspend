@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "872093856793",
+    "project_id": "expo-app-98a84",
+    "storage_bucket": "expo-app-98a84.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:872093856793:android:c6a824a3d099cec7e92688",
+        "android_client_info": {
+          "package_name": "com.expoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "872093856793-0bcutj8f3gv55e49uara5al1eu4smi6t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFigsW-uOpcOJRj12c2UGdJpItCggTvg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "872093856793-0bcutj8f3gv55e49uara5al1eu4smi6t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
